@@ -11,7 +11,7 @@ export const GlobalStyle = createGlobalStyle`
 
 body {
     
-    background-image: url("/assets/9.jpg");
+    background-image: url("/assets/4.jpg");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat; 
