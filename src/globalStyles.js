@@ -10,12 +10,12 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 body {
-    background-color: #cccccc;
-    background-image: url("/assets/Daco.png"), url("/assets/9.jpg");
+    
+    background-image: url("/assets/9.jpg");
     background-attachment: fixed;
     background-position: center;
-    background-repeat: no-repeat,no-repeat; 
-    background-size: 43%, cover;
+    background-repeat: no-repeat; 
+    background-size:  cover;
   
     width: 100%;
     height: 100%;

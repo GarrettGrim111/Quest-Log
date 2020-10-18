@@ -37,7 +37,7 @@ const LinkHolder = styled.div``;
 const Section = styled.div`
   margin: 15px;
   background-image: url("/assets/ScrollSmooth.png");
-  background-position: center center;
+  background-position: center;
   background-repeat: no-repeat;
   height: 120px;
   width: 100px;

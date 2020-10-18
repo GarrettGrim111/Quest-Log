@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 const NotFoundPage = () => {
   return (
     <Wrapper>
-      <Error404>Yeah, something went wrong</Error404>
+      <Error404>Error404</Error404>
+      <Description>Yeah, something went wrong</Description>
       <Link to="/">
         <Hyperlink>Click Here to get back to Main Quests</Hyperlink>{" "}
       </Link>
@@ -15,31 +16,29 @@ const NotFoundPage = () => {
 
 const Wrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  flex-direction: column;
+  padding-top: 40%;
+  width: 400px;
+  height: 700px;
 `;
 
-const Error404 = styled.span`
+const Description = styled.span`
   margin: 10px;
-  
-
-  font-size: 16px;
   line-height: 122%;
-  display: flex;
-  align-items: center;
-  text-align: center;
-
-  font-style: normal;
   font-weight: 500;
   font-size: 18px;
   line-height: 175%;
 `;
 
+const Error404 = styled.span`
+  font-size: 40px;
+`;
+
 const Hyperlink = styled.span`
-  color: limegreen;
+  color: darkblue;
   cursor: pointer;
-  
 `;
 
 export default NotFoundPage;
