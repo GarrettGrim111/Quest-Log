@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const MainQuestPage = () => {
+  const [quests, setQuests] = useState("");
+  const [showInput, setShowInput] = useState(false);
+
   return (
     <Wrapper>
       <Container>
@@ -17,10 +20,17 @@ const MainQuestPage = () => {
         </DeleteAllHolder>
         <QuestList></QuestList>
         <LowerHolder>
+          {showInput && (
+            <Input
+              type="text"
+              value={quests}
+              onChange={(e) => setQuests(e.target.value)}
+            />
+          )}
           <HintDown>
-            (tap <Bigger>!</Bigger> to Add new Quest){" "}
+            (tap <Bigger>!</Bigger> to Add new Quest)
           </HintDown>
-          <AddQuest>
+          <AddQuest onClick={(e) => setShowInput(!showInput)}>
             <Bigger>!</Bigger> New Quest
           </AddQuest>
         </LowerHolder>
@@ -75,6 +85,7 @@ const QuestList = styled.div`
 
 const LowerHolder = styled.div`
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 `;
 const AddQuest = styled.span`
@@ -87,6 +98,11 @@ const HintDown = styled.span`
 const Bigger = styled.span`
   font-size: 30px;
   font-weight: bold;
+`;
+
+const Input = styled.input`
+  background-color: beige;
+  width: 400px;
 `;
 
 export default MainQuestPage;

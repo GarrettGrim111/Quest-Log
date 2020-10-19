@@ -5,23 +5,37 @@ import { Link } from "react-router-dom";
 const NotFoundPage = () => {
   return (
     <Wrapper>
-      <Error404>Error404</Error404>
-      <Description>Yeah, something went wrong</Description>
-      <Link to="/">
-        <Hyperlink>Click Here to get back to Main Quests</Hyperlink>{" "}
-      </Link>
+      <Container>
+        <Error404>Error404</Error404>
+        <Description>Yeah, something went wrong</Description>
+        <Link to="/">
+          <Hyperlink>Click Here to get back to Main Quests</Hyperlink>{" "}
+        </Link>
+        <Image src="/assets/Salty.jpg" alt="" />
+      </Container>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
+  background-image: url("/assets/Daco.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 600px;
+  height: 780px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  flex-direction: column;
-  padding-top: 40%;
+`;
+
+const Container = styled.div`
   width: 400px;
-  height: 700px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Description = styled.span`
@@ -30,6 +44,12 @@ const Description = styled.span`
   font-weight: 500;
   font-size: 18px;
   line-height: 175%;
+`;
+
+const Image = styled.img`
+  width: 250px;
+  height: auto;
+  margin: 10px;
 `;
 
 const Error404 = styled.span`

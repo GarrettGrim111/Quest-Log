@@ -5,6 +5,8 @@ import SideQuestPage from "./pages/sideQuestPage-component";
 import Header from "./components/header-component";
 import WishListPage from "./pages/wishListPage-component";
 import NotFoundPage from "./pages/notFoundPage-component";
+import MusicPlayer from './components/music-player.component';
+
 
 import { Route, Switch, Redirect } from "react-router-dom";
 
@@ -13,10 +15,9 @@ function App() {
     <div className="App">
       <GlobalStyle />
       <Header />
+      <MusicPlayer />
 
-      {/* <MainQuestPage />
-      <SideQuestPage />
-      <WishListPage /> */}
+    
 
       <div className="content">
         <Switch>

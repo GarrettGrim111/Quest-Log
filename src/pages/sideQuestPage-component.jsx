@@ -31,7 +31,6 @@ const SideQuestPage = () => {
 
 const Wrapper = styled.div`
   background-image: url("/assets/Daco.png");
-
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100%;
