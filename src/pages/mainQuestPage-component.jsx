@@ -1,6 +1,7 @@
 import React from "react";
 import {
   Wrapper,
+  HintUp,
   Container,
   Title,
   DeleteAllHolder,
@@ -10,6 +11,9 @@ import {
   HintDown,
   AddItem,
 } from "../styles";
+
+
+import { FaExclamation } from "react-icons/fa";
 
 import QuestWishList from "../components/questOrWish-list.component";
 import TextInput from "../components/input.component";
@@ -26,7 +30,7 @@ const MainQuestPage = ({
     <Wrapper>
       <Container onSubmit={(e) => e.preventDefault()}>
         <Title>Main Quests:</Title>
-
+        <HintUp>(tap on Quest to Complete)</HintUp>
         <DeleteAllHolder>
           <DeleteAll onClick={handleDeleteCompleted}>
             <Bigger>X</Bigger> Delete All Completed
@@ -38,10 +42,10 @@ const MainQuestPage = ({
           <TextInput value={value} onChange={onChange} />
 
           <HintDown>
-            (tap <Bigger>!</Bigger> to Add new Quest)
+            (tap <FaExclamation size={20} /> to Add new Quest)
           </HintDown>
           <AddItem onClick={handleAddItem}>
-            <Bigger>!</Bigger> New Quest
+          <FaExclamation size={20} /> New Quest
           </AddItem>
         </LowerHolder>
       </Container>

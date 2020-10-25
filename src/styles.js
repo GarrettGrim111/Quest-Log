@@ -65,6 +65,7 @@ export const Bigger = styled.span`
 
 export const Input = styled.input`
   width: 400px;
+  margin: 2%;
 `;
 
 export const Delete = styled.span``;
