@@ -1,108 +1,52 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React from "react";
+import {
+  Wrapper,
+  Container,
+  Title,
+  DeleteAllHolder,
+  DeleteAll,
+  Bigger,
+  LowerHolder,
+  HintDown,
+  AddItem,
+} from "../styles";
 
-const MainQuestPage = () => {
-  const [quests, setQuests] = useState("");
-  const [showInput, setShowInput] = useState(false);
+import QuestWishList from "../components/questOrWish-list.component";
+import TextInput from "../components/input.component";
 
+const MainQuestPage = ({
+  handleAddItem,
+  handleDeleteCompleted,
+  value,
+  onChange,
+  items,
+  toggleComplete,
+}) => {
   return (
     <Wrapper>
-      <Container>
+      <Container onSubmit={(e) => e.preventDefault()}>
         <Title>Main Quests:</Title>
-        <HintUp>
-          (tap a Quest to Complete it, tap{" "}
-          <span style={{ fontWeight: "bold" }}>CROSS</span> to Delete it){" "}
-        </HintUp>
+
         <DeleteAllHolder>
-          <DeleteAll>
-            <Bigger>X</Bigger> Delete All
+          <DeleteAll onClick={handleDeleteCompleted}>
+            <Bigger>X</Bigger> Delete All Completed
           </DeleteAll>
         </DeleteAllHolder>
-        <QuestList></QuestList>
+        <QuestWishList items={items} toggleComplete={toggleComplete} />
+
         <LowerHolder>
-          {showInput && (
-            <Input
-              type="text"
-              value={quests}
-              onChange={(e) => setQuests(e.target.value)}
-            />
-          )}
+          <TextInput value={value} onChange={onChange} />
+
           <HintDown>
             (tap <Bigger>!</Bigger> to Add new Quest)
           </HintDown>
-          <AddQuest onClick={(e) => setShowInput(!showInput)}>
+          <AddItem onClick={handleAddItem}>
             <Bigger>!</Bigger> New Quest
-          </AddQuest>
+          </AddItem>
         </LowerHolder>
       </Container>
     </Wrapper>
   );
 };
-
-const Wrapper = styled.div`
-  background-image: url("/assets/Daco.png");
-
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  width: 600px;
-  height: 780px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const Container = styled.div`
-  width: 400px;
-  height: 500px;
-  display: flex;
-  flex-direction: column;
-`;
-
-const Title = styled.span`
-  margin: 15px;
-  font-size: 40px;
-  font-weight: bold;
-`;
-const HintUp = styled.span`
-  margin: 15px;
-  font-size: 18px;
-`;
-
-const DeleteAllHolder = styled.div`
-  display: flex;
-  justify-content: flex-end;
-`;
-const DeleteAll = styled.span`
-  cursor: pointer;
-  font-weight: bold;
-`;
-const QuestList = styled.div`
-  margin: 15px;
-  width: 300px;
-  height: 300px;
-`;
-
-const LowerHolder = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-`;
-const AddQuest = styled.span`
-  cursor: pointer;
-  font-weight: bold;
-`;
-const HintDown = styled.span`
-  font-size: 18px;
-`;
-const Bigger = styled.span`
-  font-size: 30px;
-  font-weight: bold;
-`;
-
-const Input = styled.input`
-  background-color: beige;
-  width: 400px;
-`;
 
 export default MainQuestPage;
