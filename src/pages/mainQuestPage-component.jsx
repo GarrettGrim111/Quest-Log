@@ -6,16 +6,16 @@ import {
   Title,
   DeleteAllHolder,
   DeleteAll,
-  Bigger,
   LowerHolder,
   HintDown,
   AddItem,
+  Item,
+  QuestWishBox,
 } from "../styles";
 
-
 import { FaExclamation } from "react-icons/fa";
+import { AiTwotoneDelete } from "react-icons/ai";
 
-import QuestWishList from "../components/questOrWish-list.component";
 import TextInput from "../components/input.component";
 
 const MainQuestPage = ({
@@ -33,10 +33,26 @@ const MainQuestPage = ({
         <HintUp>(tap on Quest to Complete)</HintUp>
         <DeleteAllHolder>
           <DeleteAll onClick={handleDeleteCompleted}>
-            <Bigger>X</Bigger> Delete All Completed
+            <AiTwotoneDelete size={20} /> Delete All Completed
           </DeleteAll>
         </DeleteAllHolder>
-        <QuestWishList items={items} toggleComplete={toggleComplete} />
+        <QuestWishBox>
+          {items
+            .filter((item) => item.category === "main")
+            .map((item) => {
+              return (
+                <Item
+                  key={item.id}
+                  onClick={() => {
+                    toggleComplete(item.id);
+                  }}
+                  completed={item.completed}
+                >
+                  {item.text}
+                </Item>
+              );
+            })}
+        </QuestWishBox>
 
         <LowerHolder>
           <TextInput value={value} onChange={onChange} />
@@ -44,8 +60,8 @@ const MainQuestPage = ({
           <HintDown>
             (tap <FaExclamation size={20} /> to Add new Quest)
           </HintDown>
-          <AddItem onClick={handleAddItem}>
-          <FaExclamation size={20} /> New Quest
+          <AddItem onClick={handleAddItem} type="submit">
+            <FaExclamation size={20} /> New Quest
           </AddItem>
         </LowerHolder>
       </Container>

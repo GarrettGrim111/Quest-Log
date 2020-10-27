@@ -6,67 +6,59 @@ import Header from "./components/header-component";
 import WishListPage from "./pages/wishListPage-component";
 import NotFoundPage from "./pages/notFoundPage-component";
 import MusicPlayer from "./components/music-player.component";
-import { v4 as uuidv4 } from "uuid";
-// import QuestWishList from "./components/questOrWish-list.component";
-// import TextField from "./components/input.component";
+import Player from "./components/new-player.component";
 
+import { v4 as uuidv4 } from "uuid";
 import { Route, Switch, Redirect } from "react-router-dom";
-// import { uuidv4 } from "uuid/v4";
+
+import setLocalStorage from "./utils/setLocalStorage";
 
 function App() {
-  // sem
-
   const [items, setItems] = useState([]);
-  const [inputValue, setInputValue] = useState("");
-
-  const LOCAL_STORAGE_KEY = "questAPP.items";
+  const [text, setText] = useState("");
 
   // Getting Quest/Wish items into local storage
   useEffect(() => {
-    const storedItems = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+    const storedItems = JSON.parse(localStorage.getItem("items"));
     if (storedItems) setItems(storedItems);
   }, []);
 
-  useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(items));
-  }, [items]);
+  const handleAddItem = (category) => {
+    if (text) {
+      const item = {
+        id: uuidv4(),
+        text: text,
+        category: category,
+        status: false,
+        date: new Date().toLocaleDateString("en-GB"), // DD/MM/YEAR
+      };
 
-  // Adding items
-
-  const handleAddItem = () => {
-    if (inputValue) {
-      setItems((prevItems) => {
-        return [
-          ...prevItems,
-          { id: uuidv4(), name: inputValue, completed: false },
-        ];
-      });
-      setInputValue("");
+      setLocalStorage(item);
+      setItems([...items, item]);
+      setText("");
     }
   };
 
   // changing complete to incomplete - dynamically scratch complete ones with css
   const toggleComplete = (id) => {
     const newState = [...items];
-    const todo = newState.find((item) => item.id === id);
-    todo.completed = !todo.completed;
+    const item = newState.find((item) => item.id === id);
+    item.completed = !item.completed;
     setItems(newState);
   };
 
   // not working - print only not completed ones
   const handleDeleteCompleted = () => {
     const newItems = items.filter((item) => !item.completed);
+    localStorage.setItem("items", JSON.stringify(newItems));
     setItems(newItems);
   };
-
-  // const handleChange = (e) => {
-  //   setInputValue(e.target.value);
-  // };
 
   return (
     <div className="App">
       <GlobalStyle />
       <Header />
+      <Player />
       <MusicPlayer />
 
       <div className="content">
@@ -78,9 +70,9 @@ function App() {
               <MainQuestPage
                 {...props}
                 handleDeleteCompleted={handleDeleteCompleted}
-                handleAddItem={handleAddItem}
-                value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
+                handleAddItem={() => handleAddItem("main")}
+                value={text}
+                onChange={(e) => setText(e.target.value)}
                 items={items}
                 toggleComplete={toggleComplete}
               />
@@ -93,9 +85,9 @@ function App() {
               <SideQuestPage
                 {...props}
                 handleDeleteCompleted={handleDeleteCompleted}
-                handleAddItem={handleAddItem}
-                inputValue={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
+                handleAddItem={() => handleAddItem("side")}
+                value={text}
+                onChange={(e) => setText(e.target.value)}
                 items={items}
                 toggleComplete={toggleComplete}
               />
@@ -108,9 +100,9 @@ function App() {
               <WishListPage
                 {...props}
                 handleDeleteCompleted={handleDeleteCompleted}
-                handleAddItem={handleAddItem}
-                inputValue={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
+                handleAddItem={() => handleAddItem("wishlist")}
+                value={text}
+                onChange={(e) => setText(e.target.value)}
                 items={items}
                 toggleComplete={toggleComplete}
               />
@@ -120,12 +112,6 @@ function App() {
           <Redirect to="not-found" />
         </Switch>
       </div>
-      {/* <TextField
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-        /> */}
-
-      {/* <QuestWishList items={items} toggleComplete={toggleComplete} /> */}
     </div>
   );
 }

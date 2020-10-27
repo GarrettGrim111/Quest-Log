@@ -43,7 +43,9 @@ export const QuestWishBox = styled.ul`
   height: 300px;
   display: flex;
   flex-direction: column;
-  padding: 2%;
+  padding: 10px;
+  overflow-y: scroll; // @TODO: Opravit problém s paddingem
+  overflow-x: hidden;
 `;
 
 export const LowerHolder = styled.div`
@@ -51,9 +53,12 @@ export const LowerHolder = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
 `;
-export const AddItem = styled.span`
+export const AddItem = styled.button`
   cursor: pointer;
   font-weight: bold;
+  border: none;
+  background-color: transparent;
+  outline: none;
 `;
 export const HintDown = styled.span`
   font-size: 18px;
@@ -65,13 +70,13 @@ export const Bigger = styled.span`
 
 export const Input = styled.input`
   width: 400px;
-  margin: 2%;
+  margin: 10px;
 `;
 
 export const Delete = styled.span``;
 
 export const Item = styled.li`
   cursor: pointer;
-  margin: 1.5% 0;
+  margin: 0.5rem;
   text-decoration: ${(item) => (item.completed ? `line-through` : `unset`)};
 `;

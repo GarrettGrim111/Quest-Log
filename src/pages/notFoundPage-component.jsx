@@ -40,10 +40,10 @@ const Container = styled.div`
 
 const Description = styled.span`
   margin: 10px;
-  line-height: 122%;
+  line-height: 1;
   font-weight: 500;
   font-size: 18px;
-  line-height: 175%;
+  line-height: 1.75;
 `;
 
 const Image = styled.img`

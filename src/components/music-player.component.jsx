@@ -4,10 +4,7 @@ import styled from "styled-components";
 const MusicPlayer = () => {
   return (
     <PlayerHolder>
-      <Player
-        src="./assets/sounds/The Witcher 3 Wild Hunt OST - Hunt or Be Hunted.mp3"
-        controls
-      />
+      <Player src="https://youtu.be/3hpbuiGSIII" controls />
     </PlayerHolder>
   );
 };

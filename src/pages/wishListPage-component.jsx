@@ -6,16 +6,16 @@ import {
   Title,
   DeleteAllHolder,
   DeleteAll,
-  Bigger,
   LowerHolder,
   HintDown,
   AddItem,
+  Item,
+  QuestWishBox,
 } from "../styles";
 
 import { GiRoundStar } from "react-icons/gi";
+import { AiTwotoneDelete } from "react-icons/ai";
 
-
-import QuestWishList from "../components/questOrWish-list.component";
 import TextInput from "../components/input.component";
 
 const WishPage = ({
@@ -33,10 +33,26 @@ const WishPage = ({
         <HintUp>(tap on Wish to Complete)</HintUp>
         <DeleteAllHolder>
           <DeleteAll onClick={handleDeleteCompleted}>
-            <Bigger>X</Bigger> Delete All Completed
+            <AiTwotoneDelete size={20} /> Delete All Completed
           </DeleteAll>
         </DeleteAllHolder>
-        <QuestWishList items={items} toggleComplete={toggleComplete} />
+        <QuestWishBox>
+          {items
+            .filter((item) => item.category === "wishlist")
+            .map((item) => {
+              return (
+                <Item
+                  key={item.id}
+                  onClick={() => {
+                    toggleComplete(item.id);
+                  }}
+                  completed={item.completed}
+                >
+                  {item.text}
+                </Item>
+              );
+            })}
+        </QuestWishBox>
 
         <LowerHolder>
           <TextInput value={value} onChange={onChange} />
@@ -44,7 +60,7 @@ const WishPage = ({
           <HintDown>
             (tap <GiRoundStar size={20} /> to Add new Wish)
           </HintDown>
-          <AddItem onClick={handleAddItem}>
+          <AddItem onClick={handleAddItem} type="submit">
             <GiRoundStar size={20} /> New Wish
           </AddItem>
         </LowerHolder>

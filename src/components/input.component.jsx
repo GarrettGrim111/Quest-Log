@@ -1,11 +1,11 @@
 import React from "react";
 import { Input } from "../styles";
 
-const TextField = ({ inputValue, onChange }) => {
+const TextField = ({ value, onChange }) => {
   return (
     <Input
       type="text"
-      value={inputValue}
+      value={value}
       onChange={onChange}
       placeholder="Type what you want to note..."
     />
