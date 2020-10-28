@@ -44,8 +44,28 @@ export const QuestWishBox = styled.ul`
   display: flex;
   flex-direction: column;
   padding: 10px;
-  overflow-y: scroll; // @TODO: Opravit problém s paddingem
+  overflow-y: auto;
   overflow-x: hidden;
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 `;
 
 export const LowerHolder = styled.div`
@@ -53,7 +73,7 @@ export const LowerHolder = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
 `;
-export const AddItem = styled.button`
+export const CustomButton = styled.button`
   cursor: pointer;
   font-weight: bold;
   border: none;

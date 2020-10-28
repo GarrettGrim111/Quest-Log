@@ -30,9 +30,20 @@ const Wrapper = styled.div`
   position: absolute;
   left: 0;
   height: 100%;
+
+  @media (max-width: 755px) {
+    flex-direction: row;
+    height: unset;
+    width: 100%;
+  }
 `;
 
-const LinkHolder = styled.div``;
+const LinkHolder = styled.div`
+  @media (max-width: 755px) {
+    display: flex;
+    justify-content: space-around;
+  }
+`;
 
 const Section = styled.div`
   margin: 15px;
@@ -45,7 +56,11 @@ const Section = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
+  @media (max-width: 755px) {
+    width: 100%;
+    height: 50%;
+  } ;
 `;
 
 export default Header;

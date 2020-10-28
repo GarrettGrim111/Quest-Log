@@ -8,7 +8,7 @@ import {
   DeleteAll,
   LowerHolder,
   HintDown,
-  AddItem,
+  CustomButton,
   Item,
   QuestWishBox,
 } from "../styles";
@@ -60,9 +60,9 @@ const MainQuestPage = ({
           <HintDown>
             (tap <FaExclamation size={20} /> to Add new Quest)
           </HintDown>
-          <AddItem onClick={handleAddItem} type="submit">
+          <CustomButton onClick={handleAddItem} type="submit">
             <FaExclamation size={20} /> New Quest
-          </AddItem>
+          </CustomButton>
         </LowerHolder>
       </Container>
     </Wrapper>

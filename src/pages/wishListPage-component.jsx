@@ -8,7 +8,7 @@ import {
   DeleteAll,
   LowerHolder,
   HintDown,
-  AddItem,
+  CustomButton,
   Item,
   QuestWishBox,
 } from "../styles";
@@ -60,9 +60,9 @@ const WishPage = ({
           <HintDown>
             (tap <GiRoundStar size={20} /> to Add new Wish)
           </HintDown>
-          <AddItem onClick={handleAddItem} type="submit">
+          <CustomButton onClick={handleAddItem} type="submit">
             <GiRoundStar size={20} /> New Wish
-          </AddItem>
+          </CustomButton>
         </LowerHolder>
       </Container>
     </Wrapper>
