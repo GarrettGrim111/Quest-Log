@@ -10,6 +10,8 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  left: 20%;
 `;
 
 export const Container = styled.form`
@@ -83,20 +85,16 @@ export const CustomButton = styled.button`
 export const HintDown = styled.span`
   font-size: 18px;
 `;
-export const Bigger = styled.span`
-  font-size: 30px;
-  font-weight: bold;
-`;
 
 export const Input = styled.input`
   width: 400px;
   margin: 10px;
+  font-size: 14px;
 `;
-
-export const Delete = styled.span``;
 
 export const Item = styled.li`
   cursor: pointer;
   margin: 0.5rem;
-  text-decoration: ${(item) => (item.completed ? `line-through` : `unset`)};
+  text-decoration: ${(item) =>
+    item.completed ? `line-through double` : `unset`};
 `;

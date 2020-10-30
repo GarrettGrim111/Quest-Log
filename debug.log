@@ -1,1 +1,32 @@
 [1026/154238.755:ERROR:directory_reader_win.cc(43)] FindFirstFile: Systém nemuže nalézt uvedenou cestu. (0x3)
+[1028/190607.560:ERROR:directory_reader_win.cc(43)] FindFirstFile: Systém nemuže nalézt uvedenou cestu. (0x3)
+[1029/153148.636:ERROR:process_reader_win.cc(151)] SuspendThread: Prístup byl odepren. (0x5)
+[1029/153148.636:ERROR:process_reader_win.cc(123)] NtOpenThread: {Prístup byl odepren} Proces požadoval prístup k objektu, ale nebyla mu udelena odpovídající prístupová práva. (0xc0000022)
+[1029/153148.911:ERROR:exception_snapshot_win.cc(99)] thread ID 9900 not found in process
+[1029/153148.831:ERROR:process_reader_win.cc(123)] NtOpenThread: {Prístup byl odepren} Proces požadoval prístup k objektu, ale nebyla mu udelena odpovídající prístupová práva. (0xc0000022)
+[1029/153148.911:ERROR:exception_snapshot_win.cc(99)] thread ID 9732 not found in process
+[1029/153148.636:ERROR:process_reader_win.cc(123)] NtOpenThread: {Prístup byl odepren} Proces požadoval prístup k objektu, ale nebyla mu udelena odpovídající prístupová práva. (0xc0000022)
+[1029/153148.636:ERROR:process_reader_win.cc(123)] NtOpenThread: {Prístup byl odepren} Proces požadoval prístup k objektu, ale nebyla mu udelena odpovídající prístupová práva. (0xc0000022)
+[1029/153148.636:ERROR:process_reader_win.cc(123)] NtOpenThread: {Prístup byl odepren} Proces požadoval prístup k objektu, ale nebyla mu udelena odpovídající prístupová práva. (0xc0000022)
+[1029/153148.636:ERROR:process_reader_win.cc(123)] NtOpenThread: {Prístup byl odepren} Proces požadoval prístup k objektu, ale nebyla mu udelena odpovídající prístupová práva. (0xc0000022)
+[1029/153148.636:ERROR:process_reader_win.cc(123)] NtOpenThread: {Prístup byl odepren} Proces požadoval prístup k objektu, ale nebyla mu udelena odpovídající prístupová práva. (0xc0000022)
+[1029/153148.911:ERROR:exception_snapshot_win.cc(99)] thread ID 9752 not found in process
+[1029/153148.911:ERROR:process_reader_win.cc(123)] NtOpenThread: {Prístup byl odepren} Proces požadoval prístup k objektu, ale nebyla mu udelena odpovídající prístupová práva. (0xc0000022)
+[1029/153148.636:ERROR:process_reader_win.cc(123)] NtOpenThread: {Prístup byl odepren} Proces požadoval prístup k objektu, ale nebyla mu udelena odpovídající prístupová práva. (0xc0000022)
+[1029/153148.911:ERROR:exception_snapshot_win.cc(99)] thread ID 10700 not found in process
+[1029/153148.636:ERROR:process_reader_win.cc(123)] NtOpenThread: {Prístup byl odepren} Proces požadoval prístup k objektu, ale nebyla mu udelena odpovídající prístupová práva. (0xc0000022)
+[1029/153148.911:ERROR:exception_snapshot_win.cc(99)] thread ID 3400 not found in process
+[1029/153148.911:ERROR:exception_snapshot_win.cc(99)] thread ID 10244 not found in process
+[1029/153148.759:ERROR:process_reader_win.cc(123)] NtOpenThread: {Prístup byl odepren} Proces požadoval prístup k objektu, ale nebyla mu udelena odpovídající prístupová práva. (0xc0000022)
+[1029/153148.911:ERROR:exception_snapshot_win.cc(99)] thread ID 8796 not found in process
+[1029/153148.911:ERROR:exception_snapshot_win.cc(99)] thread ID 6364 not found in process
+[1029/153148.911:ERROR:exception_snapshot_win.cc(99)] thread ID 8196 not found in process
+[1029/153148.911:ERROR:exception_snapshot_win.cc(99)] thread ID 9572 not found in process
+[1029/153148.911:ERROR:exception_snapshot_win.cc(99)] thread ID 10940 not found in process
+[1029/153148.636:ERROR:process_reader_win.cc(123)] NtOpenThread: {Prístup byl odepren} Proces požadoval prístup k objektu, ale nebyla mu udelena odpovídající prístupová práva. (0xc0000022)
+[1029/153148.919:ERROR:exception_snapshot_win.cc(99)] thread ID 4996 not found in process
+[1029/153149.151:ERROR:process_reader_win.cc(151)] SuspendThread: Prístup byl odepren. (0x5)
+[1029/153149.151:ERROR:process_reader_win.cc(123)] NtOpenThread: {Prístup byl odepren} Proces požadoval prístup k objektu, ale nebyla mu udelena odpovídající prístupová práva. (0xc0000022)
+[1029/153149.151:ERROR:exception_snapshot_win.cc(99)] thread ID 7092 not found in process
+[1029/153151.034:ERROR:process_reader_win.cc(123)] NtOpenThread: {Prístup byl odepren} Proces požadoval prístup k objektu, ale nebyla mu udelena odpovídající prístupová práva. (0xc0000022)
+[1029/153151.034:ERROR:exception_snapshot_win.cc(99)] thread ID 8672 not found in process

@@ -8,7 +8,7 @@ const NotFoundPage = () => {
       <Container>
         <Error404>Error404</Error404>
         <Description>Yeah, something went wrong</Description>
-        <Link to="/">
+        <Link to="/main-quest">
           <Hyperlink>Click Here to get back to Main Quests</Hyperlink>{" "}
         </Link>
         <Image src="/assets/Salty.jpg" alt="" />
@@ -50,6 +50,7 @@ const Image = styled.img`
   width: 250px;
   height: auto;
   margin: 10px;
+  border-radius: 5px;
 `;
 
 const Error404 = styled.span`
@@ -57,7 +58,7 @@ const Error404 = styled.span`
 `;
 
 const Hyperlink = styled.span`
-  color: darkblue;
+  color: black;
   cursor: pointer;
 `;
 

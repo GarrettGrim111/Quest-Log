@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <Wrapper>
       <LinkHolder>
-        <Link to="/">
+        <Link to="/main-quest">
           <Section>Main Quests</Section>
         </Link>
         <Link to="/side-quest">
@@ -56,6 +56,7 @@ const Section = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  color: black;
 
   @media (max-width: 755px) {
     width: 100%;

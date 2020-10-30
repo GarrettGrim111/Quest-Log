@@ -5,9 +5,8 @@ import SideQuestPage from "./pages/sideQuestPage-component";
 import Header from "./components/header-component";
 import WishListPage from "./pages/wishListPage-component";
 import NotFoundPage from "./pages/notFoundPage-component";
-// import MusicPlayer from "./components/music-player.component";
-// import Player from "./components/new-player.component";
-// import ReactPlayer from "react-player/youtube";
+import Solo from "./pages/react-youtube-solo.component";
+import BackgroundVideo from "./utils/animated-background/background-video.component";
 
 import { v4 as uuidv4 } from "uuid";
 import { Route, Switch, Redirect } from "react-router-dom";
@@ -58,15 +57,14 @@ function App() {
   return (
     <div className="App">
       <GlobalStyle />
+      <BackgroundVideo />
       <Header />
-      {/* <Player />
-      <MusicPlayer /> */}
-      {/* <ReactPlayer url="https://youtu.be/nuLo2WA8JJU" /> */}
 
       <div className="content">
         <Switch>
+          <Route path="/" exact component={Solo} />
           <Route
-            path="/"
+            path="/main-quest"
             exact
             render={(props) => (
               <MainQuestPage
