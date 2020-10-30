@@ -34,7 +34,7 @@ function App() {
         date: new Date().toLocaleDateString("en-GB"), // DD/MM/YEAR
       };
 
-      setLocalStorage(item);
+      setLocalStorage(item, "items");
       setItems([...items, item]);
       setText("");
     }
