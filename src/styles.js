@@ -10,8 +10,8 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
   left: 20%;
+ 
 `;
 
 export const Container = styled.form`
