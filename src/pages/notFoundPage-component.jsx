@@ -23,7 +23,7 @@ const Wrapper = styled.div`
   background-repeat: no-repeat;
   background-size: 100%;
   width: 600px;
-  height: 780px;
+  height: 720px;
   display: flex;
   justify-content: center;
   align-items: center;

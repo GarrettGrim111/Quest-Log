@@ -2,11 +2,10 @@ import React, { useState, useEffect } from "react";
 import { GlobalStyle } from "./globalStyles";
 import MainQuestPage from "./pages/mainQuestPage-component";
 import SideQuestPage from "./pages/sideQuestPage-component";
-import Header from "./components/header-component";
 import WishListPage from "./pages/wishListPage-component";
 import NotFoundPage from "./pages/notFoundPage-component";
-import AnimatedLayout from "./pages/vimeo-WorkingLayout.component"
-import AnimatedBackground from "./utils/animated-background/vimeoSource-Working.component"
+import AnimatedLayout from "./pages/vimeo-WorkingLayout.component";
+import AnimatedBackground from "./utils/animated-background/vimeoSource-Working.component";
 
 import { v4 as uuidv4 } from "uuid";
 import { Route, Switch, Redirect } from "react-router-dom";
@@ -58,7 +57,6 @@ function App() {
     <div className="App">
       <GlobalStyle />
       <AnimatedBackground />
-      <Header />
 
       <div className="content">
         <Switch>
