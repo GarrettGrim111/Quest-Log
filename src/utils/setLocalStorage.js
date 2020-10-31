@@ -1,18 +1,16 @@
-const setLocalStorage = (item) => {
-  const prevLocalStorage = JSON.parse(localStorage.getItem("items"));
-  const data = [];
+const setLocalStorage = (data, item) => {
+  const localStorageItem = JSON.parse(localStorage.getItem(item));
+  const array = [];
 
   // At first, in local storage is nothing, we have nothing to iterate and push, if there anything iterate through elements
-  if (prevLocalStorage !== null) {
-    for (let item of prevLocalStorage) {
-      data.push(item);
+  if (localStorageItem !== null) {
+    for (let data of localStorageItem) {
+      array.push(data);
     }
   }
 
-  // Add new item object to the beginning -
-  // add new items to previous complete local storage (default is compplete substitude of local storage)
-  data.push(item);
-  localStorage.setItem("items", JSON.stringify(data));
+  array.push(data);
+  localStorage.setItem(item, JSON.stringify(array));
 };
 
 export default setLocalStorage;
