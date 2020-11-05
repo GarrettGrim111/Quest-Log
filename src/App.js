@@ -6,6 +6,7 @@ import WishListPage from "./pages/wishListPage-component";
 import NotFoundPage from "./pages/notFoundPage-component";
 import AnimatedLayout from "./pages/vimeo-WorkingLayout.component";
 import AnimatedBackground from "./utils/animated-background/vimeoSource-Working.component";
+import Vimeo from "@u-wave/react-vimeo";
 
 import { v4 as uuidv4 } from "uuid";
 import { Route, Switch, Redirect } from "react-router-dom";
@@ -15,6 +16,7 @@ import setLocalStorage from "./utils/setLocalStorage";
 function App() {
   const [items, setItems] = useState([]);
   const [text, setText] = useState("");
+  const [loading, setLoading] = useState(true);
 
   // Getting Quest/Wish items into local storage
   useEffect(() => {
@@ -53,10 +55,18 @@ function App() {
     setItems(newItems);
   };
 
+  console.log("načítání", loading);
+
   return (
     <div className="App">
       <GlobalStyle />
       <AnimatedBackground />
+      <Vimeo
+        video="474116212"
+        background={true}
+        onPlay={() => setLoading(false)}
+        autoplay
+      />
 
       <div className="content">
         <Switch>
