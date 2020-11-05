@@ -9,10 +9,10 @@ const AnimatedLayout = () => {
         <iframe
           title="landing-layout"
           src="https://player.vimeo.com/video/474116212?background=1&autoplay=1&loop=1&byline=0&title=0"
-          frameborder="0"
-          webkitallowfullscreen
-          mozallowfullscreen
-          allowfullscreen
+          frameBorder="0"
+          webkitallowfullscreen="true"
+          mozallowfullscreen="true"
+          allowFullScreen
         ></iframe>
       </VimeoWrapper>
 
