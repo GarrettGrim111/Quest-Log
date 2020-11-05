@@ -10,8 +10,6 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  left: 20%;
- 
 `;
 
 export const Container = styled.form`
@@ -38,6 +36,7 @@ export const DeleteAllHolder = styled.div`
 export const DeleteAll = styled.span`
   cursor: pointer;
   font-weight: bold;
+  
 `;
 export const QuestWishBox = styled.ul`
   margin: 15px;

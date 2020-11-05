@@ -7,6 +7,7 @@ const AnimatedLayout = () => {
     <Link to="/main-quest">
       <VimeoWrapper>
         <iframe
+          title="landing-layout"
           src="https://player.vimeo.com/video/474116212?background=1&autoplay=1&loop=1&byline=0&title=0"
           frameborder="0"
           webkitallowfullscreen
@@ -47,7 +48,24 @@ const Entry = styled.span`
   left: 45%;
   top: 50%;
   font-size: 25px;
-  color: white;
+  color: silver;
+
+  -webkit-animation: fadeinout 2s linear forwards;
+  animation: fadeinout 2s linear infinite;
+  opacity: 0;
+
+  @-webkit-keyframes fadeinout {
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeinout {
+    50% {
+      opacity: 1;
+    }
+  }
+
   /* z-index: 99; */
   /* @media (max-width: 755px) {
   display: flex;

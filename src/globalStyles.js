@@ -10,14 +10,7 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 body {
-    
-    background-image: url("/assets/4.jpg");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat; 
-    background-size:  cover;
-  
-    width: 100%;
+     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
