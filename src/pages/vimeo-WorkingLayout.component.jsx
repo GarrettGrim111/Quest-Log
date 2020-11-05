@@ -16,7 +16,12 @@ const AnimatedLayout = () => {
 
       <Link to="/main-quest">
         <VimeoWrapper>
-          <Vimeo video={474116212} onPlay={() => setLoading(false)} autoplay />
+          <Vimeo
+            video={474116212}
+            background={true}
+            onPlay={() => setLoading(false)}
+            autoplay
+          />
           {loading === false && <Entry>Enter on Click</Entry>}
         </VimeoWrapper>
       </Link>
@@ -24,7 +29,13 @@ const AnimatedLayout = () => {
   );
 };
 
-const Loading = styled.div``;
+const Loading = styled.div`
+  position: absolute;
+  left: 45%;
+  top: 50%;
+  font-size: 25px;
+  color: silver;
+`;
 
 const VimeoWrapper = styled.div`
   position: fixed;
