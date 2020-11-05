@@ -9,11 +9,13 @@ const AnimatedLayout = () => {
         <iframe
           title="landing-layout"
           src="https://player.vimeo.com/video/474116212?background=1&autoplay=1&loop=1&byline=0&title=0"
-          frameborder="0"
-          webkitallowfullscreen
-          mozallowfullscreen
-          allowfullscreen
-        ></iframe>
+          frameBorder="0"
+          webkitallowfullscreen="true"
+          mozallowfullscreen="true"
+          allowFullScreen
+          autopause="true"
+          controls={false}
+        />
       </VimeoWrapper>
 
       <Entry>Enter on Click</Entry>
@@ -66,7 +68,6 @@ const Entry = styled.span`
     }
   }
 
-  /* z-index: 99; */
   /* @media (max-width: 755px) {
   display: flex;
   justify-content: space-around;
