@@ -1,25 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import Vimeo from "@u-wave/react-vimeo";
 
 const AnimatedLayout = () => {
-  return (
-    <Link to="/main-quest">
-      <VimeoWrapper>
-        <iframe
-          title="landing-layout"
-          src="https://player.vimeo.com/video/474116212?background=1&autoplay=1&loop=1&byline=0&title=0"
-          frameBorder="0"
-          webkitallowfullscreen="true"
-          mozallowfullscreen="true"
-          allowFullScreen
-        ></iframe>
-      </VimeoWrapper>
+  const [loading, setLoading] = useState(true);
 
-      <Entry>Enter on Click</Entry>
-    </Link>
+  return (
+    <>
+      {loading === true && (
+        <Loading>
+          <h1>Načítám!</h1>
+        </Loading>
+      )}
+
+      <Link to="/main-quest">
+        <VimeoWrapper>
+          <Vimeo video={474116212} onPlay={() => setLoading(false)} autoplay />
+          {loading === false && <Entry>Enter on Click</Entry>}
+        </VimeoWrapper>
+      </Link>
+    </>
   );
 };
+
+const Loading = styled.div``;
 
 const VimeoWrapper = styled.div`
   position: fixed;
