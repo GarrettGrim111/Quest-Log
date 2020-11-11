@@ -4,16 +4,20 @@ import MainQuestPage from "./pages/mainQuestPage-component";
 import SideQuestPage from "./pages/sideQuestPage-component";
 import WishListPage from "./pages/wishListPage-component";
 import NotFoundPage from "./pages/notFoundPage-component";
-import AnimatedLayout from "./pages/vimeo-WorkingLayout.component";
-import AnimatedBackground from "./utils/animated-background/vimeoSource-Working.component";
+// import AnimatedLayout from "./pages/video-UsedLayout.component";
+// import AnimatedLayout from "./pages/vimeo-WorkingLayout.component"
+import HtmlLayout from "./pages/html-Layout.component";
+// import AnimatedBackground from "./utils/animated-background/vimeoSource-Working.component";
 // import styled from "styled-components";
 // import "./loadingStyle.css";
+import HtmlBackground from './utils/animated-background/html-Background.component';
+
+
 
 import { v4 as uuidv4 } from "uuid";
 import { Route, Switch, Redirect } from "react-router-dom";
 
 import setLocalStorage from "./utils/setLocalStorage";
-
 
 // const loader = document.querySelector(".loader");
 // const showLoader = () => loader.classList.remove("loader--hide");
@@ -65,14 +69,14 @@ function App() {
   return (
     <div id="App">
       <GlobalStyle />
-      <AnimatedBackground />
+      <HtmlBackground />
 
       <div className="content">
         <Switch>
           <Route
             path="/"
             exact
-            component={AnimatedLayout}
+            component={HtmlLayout}
             // hideLoader={hideLoader}
             // showLoader={showLoader}
           />
