@@ -4,28 +4,15 @@ import MainQuestPage from "./pages/mainQuestPage-component";
 import SideQuestPage from "./pages/sideQuestPage-component";
 import WishListPage from "./pages/wishListPage-component";
 import NotFoundPage from "./pages/notFoundPage-component";
-// import AnimatedLayout from "./pages/video-UsedLayout.component";
-// import AnimatedLayout from "./pages/vimeo-WorkingLayout.component"
 import HtmlLayout from "./pages/html-Layout.component";
-// import AnimatedBackground from "./utils/animated-background/vimeoSource-Working.component";
-// import styled from "styled-components";
-// import "./loadingStyle.css";
-import HtmlBackground from './utils/animated-background/html-Background.component';
-
-
+import HtmlBackground from "./utils/animated-background/html-Background.component";
 
 import { v4 as uuidv4 } from "uuid";
 import { Route, Switch, Redirect } from "react-router-dom";
 
 import setLocalStorage from "./utils/setLocalStorage";
 
-// const loader = document.querySelector(".loader");
-// const showLoader = () => loader.classList.remove("loader--hide");
-// const hideLoader = () => loader.classList.add("loader--hide");
-
 function App() {
-  // useEffect(hideLoader, []);
-
   const [items, setItems] = useState([]);
   const [text, setText] = useState("");
 
@@ -73,13 +60,7 @@ function App() {
 
       <div className="content">
         <Switch>
-          <Route
-            path="/"
-            exact
-            component={HtmlLayout}
-            // hideLoader={hideLoader}
-            // showLoader={showLoader}
-          />
+          <Route path="/" exact component={HtmlLayout} />
           <Route
             path="/main-quest"
             exact
@@ -129,29 +110,8 @@ function App() {
           <Redirect to="not-found" />
         </Switch>
       </div>
-      {/* <script
-        crossorigin
-        src="https://unpkg.com/react@16/umd/react.development.js"
-      ></script>
-      <script
-        crossorigin
-        src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
-      ></script> */}
     </div>
   );
 }
-
-// const Loader = styled.div`
-//   position: absolute;
-//   top: calc(50% - 4em);
-//   left: calc(50% - 4em);
-//   width: 6em;
-//   height: 6em;
-//   border: 1.1em solid rgba(0, 0, 0, 0.2);
-//   border-left: 1.1em solid #000000;
-//   border-radius: 50%;
-//   animation: load8 1.1s infinite linear;
-//   transition: opacity 0.3s;
-// `;
 
 export default App;

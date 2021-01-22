@@ -7,13 +7,7 @@ const HtmlLayout = () => {
     <>
       <Link to="/main-quest">
         <Wrapper>
-          {/* <Video
-          muted="true"
-            autoplay="true"
-            loop="true"
-            src="./assets/video-for-background/edited-layout-long(music).mp4"
-            type="video/mp4"
-          /> */}
+      
 
           <video
             className="layout"
@@ -43,21 +37,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* pointer-events: none; */
-
-  /* object-fit: cover;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0; */
-
-  /* position: relative;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden; */
+  
 
   .layout {
     position: absolute;
@@ -82,24 +62,6 @@ const Wrapper = styled.div`
       center / cover no-repeat;
   }
 `;
-
-// const Video = styled.video`
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   width: auto;
-//   height: auto;
-//   min-width: 100%;
-//   min-height: 100%;
-//   -webkit-transform: translate(-50%, -50%);
-//   -moz-transform: translate(-50%, -50%);
-//   -ms-transform: translate(-50%, -50%);
-//   transform: translate(-50%, -50%);
-
-//   @media (max-width: 767px) {
-//     display: none;
-//   }
-// `;
 
 const Entry = styled.span`
   font-size: 25px;
